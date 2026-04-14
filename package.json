@@ -1,0 +1,17 @@
+{
+  "name": "260427_css_custom_highlight",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/ics-creative/260427_css_custom_highlight#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ics-creative/260427_css_custom_highlight.git"
+  },
+  "license": "MIT",
+  "author": "ics-kitagawa",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "fix": "biome check --write"
+  }
+}
