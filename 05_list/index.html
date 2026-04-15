@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Custom Highlight API | Basic</title>
+    <link rel="stylesheet" href="../base.css">
+    <style>
+    main {
+      display: grid;
+      gap: 40px;
+      justify-items: center;
+      align-content: center;
+      height: 100vh;
+      font-size: 24px;
+    }
+    ::highlight(list) {
+      background: blue;
+      color: white;
+    }
+    ul,
+    li {
+      width: fit-content;
+    }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h4>List with spaces</h4>
+      <ul class="list">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+      </ul>
+      <h4>List without spaces</h4>
+      <ul class="nospace"><li>Apple</li><li>Banana</li><li>Cherry</li></ul>
+    </main>
+    <script>
+    const list = document.querySelector(".list");
+    const listRange = new Range();
+    listRange.setStart(list, 0);
+    listRange.setEnd(list, 2);
+
+    const nospace = document.querySelector(".nospace");
+    const nospaceRange = new Range();
+    nospaceRange.setStart(nospace, 0);
+    nospaceRange.setEnd(nospace, 2);
+
+    const highlight = new Highlight(listRange, nospaceRange);
+    CSS.highlights.set("list", highlight);
+    </script>
+  </body>
+</html>

@@ -3,11 +3,39 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Basic</title>
+    <title>CSS Custom Highlight API | Basic</title>
     <link rel="stylesheet" href="../base.css">
+    <style>
+    main {
+      display: grid;
+      gap: 40px;
+      justify-items: center;
+      align-content: center;
+      height: 100vh;
+      font-size: 24px;
+    }
+    p {
+      text-align: center;
+    }
+    ::highlight(highlight) {
+      background: yellow;
+    }
+    </style>
   </head>
   <body>
-    <h1>Basic</h1>
-    <script type="module" src="main.js"></script>
+    <main>
+      <p class="description">
+        CSS Custom Highlight API is for highlighting texts!
+      </p>
+    </main>
+    <script>
+    const description = document.querySelector(".description");
+    const range = new Range();
+    range.setStart(description.firstChild, 0);
+    range.setEnd(description.firstChild, 20);
+
+    const highlight = new Highlight(range);
+    CSS.highlights.set("highlight", highlight);
+    </script>
   </body>
 </html>
