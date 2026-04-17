@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Custom Highlight API | Search</title>
+    <link rel="stylesheet" href="../base.css">
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <main>
+      <header class="search-header">
+        <h1>Search the article</h1>
+        <label class="search-field">
+          <span class="search-label">Keyword</span>
+          <input
+            type="search"
+            class="search-input"
+            placeholder="Type a keyword, e.g. highlight"
+            autocomplete="off"
+          >
+        </label>
+        <p class="search-hint">
+          Matched words will be highlighted with the CSS Custom Highlight API.
+        </p>
+      </header>
+
+      <article class="article">
+        <h2>What is the CSS Custom Highlight API?</h2>
+        <p>
+          The CSS Custom Highlight API is a modern web platform feature that
+          lets developers paint arbitrary ranges of text in a document without
+          altering the underlying DOM. Before this API became available,
+          highlighting words typically required wrapping each matched fragment
+          with an additional span element, updating the tree, and then
+          unwrapping those spans whenever the highlight needed to change. That
+          approach is expensive, error prone, and can break other tools such as
+          screen readers, selection, or third party scripts that observe
+          mutations on the page.
+        </p>
+        <p>
+          With the CSS Custom Highlight API the browser takes care of painting,
+          and the developer only describes which ranges should be decorated.
+          Three small building blocks are involved. A Range object represents a
+          contiguous span of text inside a node. A Highlight object is a set of
+          ranges that should share the same decoration. Finally, the global
+          CSS.highlights registry is a map from a name to a Highlight, and that
+          name is the one the author targets from a stylesheet with the new
+          pseudo element called highlight.
+        </p>
+        <p>
+          Styling a named highlight is straightforward. The author writes a rule
+          such as ::highlight(search) and then declares visual properties like
+          background-color, color, or text-decoration. Only a small subset of
+          properties is supported on purpose, because the highlight layer is
+          rendered separately from the element tree. Supported properties cover
+          the common cases required by search, spell check, proofreading, and
+          annotation features, which are the main motivating use cases of the
+          specification.
+        </p>
+        <p>
+          A typical workflow looks like this. The script collects the text nodes
+          it wants to inspect, often by walking the tree with a TreeWalker. It
+          then creates one Range per match, grouping them inside a single
+          Highlight instance. The Highlight is stored under a descriptive key
+          such as search or spelling inside CSS.highlights. Whenever the query
+          changes, the script clears the old ranges and pushes the new ones.
+          Because the DOM is never modified, layout is preserved and
+          interactions like text selection keep working.
+        </p>
+        <p>
+          Real world applications are numerous. A documentation site can offer
+          in page search that highlights every occurrence of a query as the user
+          types. A code editor can underline diagnostics coming from a language
+          server with a wavy decoration. A writing assistant can flag passive
+          voice, filler words, or style mistakes. Collaborative editors can show
+          the selection of remote users. In each of these cases the Custom
+          Highlight API removes the need to synchronize DOM mutations with every
+          update, which makes the experience faster and safer.
+        </p>
+        <p>
+          Browser support has grown quickly. Chrome and Edge shipped the feature
+          in 2022, and Safari followed soon after. Firefox enabled it by default
+          in a recent release. For users on older browsers, progressive
+          enhancement is the recommended strategy. The application can check for
+          the presence of CSS.highlights and fall back to an alternative
+          strategy, for example a plain text view without highlights, or the
+          classic wrapping technique in critical cases. Because the feature
+          degrades gracefully, adopting it today is a safe bet for new projects.
+        </p>
+        <p>
+          In summary, the CSS Custom Highlight API gives authors a clean
+          separation between the data they have, the decorations they want, and
+          the rendering performed by the browser. It replaces fragile DOM
+          surgery with a declarative pipeline made of ranges, highlights, and a
+          registry. Combined with the expressive pseudo element selector it
+          unlocks fast, accessible, and flexible text decorations that used to
+          require a significant amount of custom code to implement on the web.
+        </p>
+      </article>
+    </main>
+    <script src="./main.js"></script>
+  </body>
+</html>

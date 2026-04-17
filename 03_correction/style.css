@@ -1,0 +1,100 @@
+main {
+  display: grid;
+  gap: 28px;
+  width: min(820px, 100%);
+  padding: 32px 24px 80px;
+}
+
+.page-header {
+  display: grid;
+  gap: 8px;
+}
+
+.page-header h1 {
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.description {
+  font-size: 14px;
+  color: #555555;
+}
+
+.rules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.rule-group {
+  display: grid;
+  gap: 8px;
+  padding: 16px 18px;
+  border: 1px solid #c8c8c8;
+  border-radius: 8px;
+}
+
+.rule-group legend {
+  padding: 0 6px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+}
+
+.rule-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editor-area {
+  display: grid;
+  gap: 12px;
+}
+
+.editor-label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.editor {
+  width: 100%;
+  padding: 12px 14px;
+  font-size: 15px;
+  line-height: 1.7;
+  font-family: inherit;
+  border: 1px solid #c0c0c0;
+  border-radius: 6px;
+  resize: vertical;
+  outline: none;
+}
+
+.editor:focus {
+  border-color: #1976d2;
+}
+
+.preview-heading {
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.preview {
+  min-height: 120px;
+  padding: 14px 16px;
+  font-size: 15px;
+  line-height: 1.8;
+  background-color: #fafafa;
+  border: 1px dashed #c8c8c8;
+  border-radius: 6px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+::highlight(correction) {
+  background-color: rgba(255, 80, 80, 0.25);
+  text-decoration: underline wavy #e53935;
+  text-decoration-thickness: 2px;
+}
