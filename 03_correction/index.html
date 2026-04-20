@@ -12,101 +12,15 @@
       <header class="page-header">
         <h1>Proofreading Highlighter</h1>
         <p class="description">
-          チェックした校正ルールに反する箇所を、プレビュー内でハイライトします。
+          校正ルールに反する箇所を、プレビュー内でハイライトします。
         </p>
       </header>
-
-      <section class="rules">
-        <fieldset class="rule-group">
-          <legend>English Rules</legend>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="filler-very"
-              checked
-            >
-            <span>Avoid "very"</span>
-          </label>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="filler-really-just"
-              checked
-            >
-            <span>Avoid "really" / "just"</span>
-          </label>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="double-space"
-              checked
-            >
-            <span>Double space</span>
-          </label>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="passive-voice"
-              checked
-            >
-            <span>Passive voice (simple)</span>
-          </label>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="trailing-space"
-              checked
-            >
-            <span>Trailing whitespace</span>
-          </label>
-        </fieldset>
-
-        <fieldset class="rule-group">
-          <legend>日本語ルール</legend>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="redundant-suru"
-              checked
-            >
-            <span>「することができる」は冗長</span>
-          </label>
-          <label class="rule-item">
-            <input
-              type="checkbox"
-              class="rule-checkbox"
-              id="itadaku-kanji"
-              checked
-            >
-            <span>「頂く」は「いただく」推奨</span>
-          </label>
-          <label class="rule-item">
-            <input type="checkbox" class="rule-checkbox" id="han-kana" checked>
-            <span>半角カナ禁止</span>
-          </label>
-          <label class="rule-item">
-            <input type="checkbox" class="rule-checkbox" id="zen-alnum" checked>
-            <span>全角英数字禁止</span>
-          </label>
-          <label class="rule-item">
-            <input type="checkbox" class="rule-checkbox" id="omoimasu" checked>
-            <span>「だと思います」の多用</span>
-          </label>
-        </fieldset>
-      </section>
 
       <section class="editor-area">
         <label class="editor-label" for="editor">文章を入力</label>
         <textarea class="editor" id="editor" rows="8" spellcheck="false">
-          This feature is very useful and it is really just amazing. The
-          document was written by a teacher. Trailing spaces here:
-          サンプル文章です。このツールを使うと、文章を校正することができます。ご確認頂けると幸いです。ﾊﾝｶｸｶﾅも検出されます。ＡＢＣ１２３
+          This feature is very useful and it is really just amazing.
+          サンプル文章です。ﾊﾝｶｸｶﾅも検出されます。ＡＢＣ１２３
           のような全角英数字も検出します。これは便利だと思います。
         </textarea>
 

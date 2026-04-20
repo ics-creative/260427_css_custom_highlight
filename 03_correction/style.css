@@ -20,35 +20,6 @@ main {
   color: #555555;
 }
 
-.rules {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 16px;
-}
-
-.rule-group {
-  display: grid;
-  gap: 8px;
-  padding: 16px 18px;
-  border: 1px solid #c8c8c8;
-  border-radius: 8px;
-}
-
-.rule-group legend {
-  padding: 0 6px;
-  font-size: 14px;
-  font-weight: 600;
-  color: #333333;
-}
-
-.rule-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 14px;
-  cursor: pointer;
-}
-
 .editor-area {
   display: grid;
   gap: 12px;
