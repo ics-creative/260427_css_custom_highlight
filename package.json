@@ -11,7 +11,11 @@
   "author": "ics-kitagawa",
   "type": "commonjs",
   "main": "index.js",
+  "private": true,
+  "workspaces": ["04_mastra"],
   "scripts": {
-    "fix": "biome check --write"
+    "fix": "biome check --write",
+    "dev": "npm run dev -w 04_mastra",
+    "build": "npm run build -w 04_mastra"
   }
 }

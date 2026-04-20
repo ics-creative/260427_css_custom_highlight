@@ -7,7 +7,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!05_list/index.html"]
+    "includes": ["**", "!docs/05_list/index.html", "!docs/04_mastra/**", "!04_mastra/dist/**"]
   },
   "formatter": {
     "enabled": true,
