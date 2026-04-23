@@ -1,0 +1,26 @@
+import { Mastra } from "@mastra/core/mastra";
+import { registerApiRoute } from "@mastra/core/server";
+import { reviewSentimentAgent } from "./agents/reviewSentimentAgent.ts";
+import { reviewSentimentHandler } from "./apiRoutes/reviewSentiment.ts";
+
+export const mastra = new Mastra({
+  agents: { reviewSentimentAgent },
+  server: {
+    cors: {
+      origin: [
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "https://ics-creative.github.io",
+      ],
+      allowMethods: ["GET", "POST", "OPTIONS"],
+      allowHeaders: ["Content-Type"],
+      credentials: false,
+    },
+    apiRoutes: [
+      registerApiRoute("/review-sentiment", {
+        method: "POST",
+        handler: reviewSentimentHandler,
+      }),
+    ],
+  },
+});

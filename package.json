@@ -12,10 +12,21 @@
   "type": "commonjs",
   "main": "index.js",
   "private": true,
-  "workspaces": ["04_mastra"],
+  "workspaces": [
+    "04_heatmap",
+    "04_heatmap_server"
+  ],
   "scripts": {
     "fix": "biome check --write",
-    "dev": "npm run dev -w 04_mastra",
-    "build": "npm run build -w 04_mastra"
+    "dev": "npm run dev -w 04_heatmap",
+    "dev:server": "npm run dev -w 04_heatmap_server",
+    "build": "npm run build -w 04_heatmap",
+    "build:server": "npm run build -w 04_heatmap_server"
+  },
+  "overrides": {
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.4.12"
   }
 }
