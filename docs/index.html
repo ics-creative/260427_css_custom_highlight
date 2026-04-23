@@ -6,38 +6,38 @@
     <title>CSS Custom Highlight API Demos</title>
     <link rel="stylesheet" href="./base.css">
     <style>
-      main {
-        max-width: 720px;
-        padding: 40px 24px;
-      }
-      h1 {
-        font-size: 28px;
-        margin-bottom: 24px;
-      }
-      ul {
-        list-style: none;
-        display: grid;
-        gap: 12px;
-      }
-      a {
-        display: block;
-        padding: 16px 20px;
-        border: 1px solid #ddd;
-        border-radius: 8px;
-        text-decoration: none;
-        color: inherit;
-      }
-      a:hover {
-        background-color: #f5f5f5;
-      }
-      .demo-title {
-        font-weight: bold;
-      }
-      .demo-desc {
-        font-size: 14px;
-        color: #666;
-        margin-top: 4px;
-      }
+    main {
+      max-width: 720px;
+      padding: 40px 24px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 24px;
+    }
+    ul {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+    }
+    a {
+      display: block;
+      padding: 16px 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover {
+      background-color: #f5f5f5;
+    }
+    .demo-title {
+      font-weight: bold;
+    }
+    .demo-desc {
+      font-size: 14px;
+      color: #666;
+      margin-top: 4px;
+    }
     </style>
   </head>
   <body>
@@ -53,7 +53,9 @@
         <li>
           <a href="./02_search/">
             <div class="demo-title">02. Search</div>
-            <div class="demo-desc">入力された文字列にマッチする箇所をハイライト</div>
+            <div class="demo-desc">
+              入力された文字列にマッチする箇所をハイライト
+            </div>
           </a>
         </li>
         <li>
@@ -63,9 +65,12 @@
           </a>
         </li>
         <li>
-          <a href="./04_mastra/">
-            <div class="demo-title">04. Mastra (Sentiment Heatmap)</div>
-            <div class="demo-desc">Mastra でレビューを感情判定してグラデーション表示</div>
+          <a href="./04_heatmap/">
+            <div class="demo-title">04. Sentiment heatmap</div>
+            <div class="demo-desc">
+              映画レビュー風 UI。Mastra Server 経由で感情スコアを付け、CSS
+              Custom Highlight で句点単位に色付け
+            </div>
           </a>
         </li>
         <li>
