@@ -11,6 +11,7 @@
       "**",
       "!docs/05_list/index.html",
       "!docs/04_heatmap",
+      "!docs/01_basic/index.html",
       "!**/.mastra"
     ]
   },
