@@ -1,7 +1,6 @@
 const rules = [
   { pattern: /\bvery\b/gi },
   { pattern: /\b(really|just)\b/gi },
-  { pattern: / {2,}/g },
   { pattern: /[\uFF61-\uFF9F]+/g },
   { pattern: /[\uFF21-\uFF3A\uFF41-\uFF5A\uFF10-\uFF19]+/g },
   { pattern: /だと思います/g },

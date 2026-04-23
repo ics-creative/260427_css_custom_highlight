@@ -11,14 +11,21 @@
     <main>
       <header class="page-header">
         <h1>Proofreading Highlighter</h1>
-        <p class="description">
-          校正ルールに反する箇所を、プレビュー内でハイライトします。
-        </p>
       </header>
+      <ul>
+        <li>The word <code>very</code> is not recommended to use.</li>
+        <li>
+          The words <code>really</code> or <code>just</code> is not recommended
+          to use.
+        </li>
+        <li>半角カタカナはNG</li>
+        <li>全角英字・全角数字はNG</li>
+        <li>「だと思います」はNG</li>
+      </ul>
 
       <section class="editor-area">
         <label class="editor-label" for="editor">文章を入力</label>
-        <textarea class="editor" id="editor" rows="8" spellcheck="false">
+        <textarea class="editor" id="editor" rows="4" spellcheck="false">
           This feature is very useful and it is really just amazing.
           サンプル文章です。ﾊﾝｶｸｶﾅも検出されます。ＡＢＣ１２３
           のような全角英数字も検出します。これは便利だと思います。
