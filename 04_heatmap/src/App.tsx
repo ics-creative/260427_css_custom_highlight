@@ -13,6 +13,7 @@ export function App() {
   const [analyzing, setAnalyzing] = useState(false);
   const [isJapanese, setIsJapanese] = useState<boolean>(true);
   const displayReviews = getReviews(isJapanese);
+  const [hasError, setHasError] = useState(false);
 
   const onLanguageChange = () => {
     setIsJapanese(!isJapanese);
@@ -27,9 +28,10 @@ export function App() {
     try {
       const response = await analyzeReviews(getReviews(isJapanese));
       applySentimentHighlights(response);
-    } catch (error) {
+      setHasError(false);
+    } catch {
       clearHighlight();
-      console.error(error);
+      setHasError(true);
     } finally {
       setAnalyzing(false);
     }
@@ -39,6 +41,11 @@ export function App() {
 
   return (
     <>
+      {hasError && (
+        <p className="error-message">
+          エラーが発生しました。時間をおいて再度試してください。
+        </p>
+      )}
       <div className="lang-toggle">
         <div className="lang-toggle__row">
           <span

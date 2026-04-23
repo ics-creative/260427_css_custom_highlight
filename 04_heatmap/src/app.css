@@ -237,3 +237,12 @@ button:disabled {
 ::highlight(sentiment-5) {
   background-color: color-mix(in srgb, var(--color-positive) 40%, transparent);
 }
+
+.error-message {
+  color: #b00020;
+  padding: 12px 16px;
+  border: 1px solid #b00020;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  background-color: color-mix(in srgb, #b00020 10%, transparent);
+}

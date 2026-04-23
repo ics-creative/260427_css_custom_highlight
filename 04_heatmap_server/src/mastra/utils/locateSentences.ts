@@ -24,7 +24,7 @@ function stripWhitespace(text: string): StrippedText {
 
 /**
  * エージェントが返した sentence.text を原文中から検索し、UTF-16 コードユニット単位のstart / endを算出する。
- * 
+ *
  * - 空白差異を吸収するため空白を除去してから処理します
  * - 得られたインデックスを原文インデックスへ変換します
  * - 見つからなかった文は結果から除外する。
