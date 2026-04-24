@@ -12,7 +12,7 @@ export const mastra = new Mastra({
       origin: [
         "http://localhost:5173",
         "http://127.0.0.1:5173",
-        "https://ics-creative.github.io",
+        "https://260427-css-custom-highlight-04-heat-rust.vercel.app/",
       ],
       allowMethods: ["GET", "POST", "OPTIONS"],
       allowHeaders: ["Content-Type"],
