@@ -19,9 +19,7 @@
   "scripts": {
     "fix": "biome check --write",
     "dev": "npm run dev -w 04_heatmap",
-    "dev:server": "npm run dev -w 04_heatmap_server",
-    "build": "npm run build -w 04_heatmap",
-    "build:server": "npm run build -w 04_heatmap_server"
+    "dev:server": "npm run dev -w 04_heatmap_server"
   },
   "overrides": {
     "zod": "^4.3.6"

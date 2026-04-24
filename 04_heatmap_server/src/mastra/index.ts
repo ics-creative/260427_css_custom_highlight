@@ -1,9 +1,11 @@
 import { Mastra } from "@mastra/core/mastra";
 import { registerApiRoute } from "@mastra/core/server";
+import { VercelDeployer } from "@mastra/deployer-vercel";
 import { reviewSentimentAgent } from "./agents/reviewSentimentAgent.ts";
 import { reviewSentimentHandler } from "./apiRoutes/reviewSentiment.ts";
 
 export const mastra = new Mastra({
+  deployer: new VercelDeployer(),
   agents: { reviewSentimentAgent },
   server: {
     cors: {

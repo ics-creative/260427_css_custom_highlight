@@ -1,4 +1,5 @@
 .env
 .env.local
 .mastra
+.vercel
 node_modules
