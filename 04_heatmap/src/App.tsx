@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FullScreenLoading } from "./components/FullScreenLoading.tsx";
 import { ReviewList } from "./components/ReviewList.tsx";
 import { Toolbar } from "./components/Toolbar.tsx";
 import { getReviews } from "./logics/getReviews.ts";
@@ -8,7 +9,6 @@ import {
 } from "./logics/highlightText.ts";
 import { analyzeReviews, hasMastraServerUrl } from "./logics/mastraClient.ts";
 
-/** レビュー一覧・投稿・AI 判定・ハイライト適用をまとめたルートコンポーネント。 */
 export function App() {
   const [analyzing, setAnalyzing] = useState(false);
   const [isJapanese, setIsJapanese] = useState<boolean>(true);
@@ -41,6 +41,7 @@ export function App() {
 
   return (
     <>
+      {analyzing && <FullScreenLoading />}
       {hasError && (
         <p className="error-message">
           エラーが発生しました。時間をおいて再度試してください。

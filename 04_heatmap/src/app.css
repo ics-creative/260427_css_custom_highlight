@@ -246,3 +246,31 @@ button:disabled {
   margin-bottom: 16px;
   background-color: color-mix(in srgb, #b00020 10%, transparent);
 }
+
+.full-screen-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: color-mix(in srgb, var(--color-white) 70%, transparent);
+  backdrop-filter: blur(2px);
+}
+
+.full-screen-loading__spinner {
+  width: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  border: 2px solid color-mix(in srgb, var(--color-muted) 35%, transparent);
+  border-top-color: var(--color-text);
+  border-radius: 50%;
+  animation: loading-spin 1.2s cubic-bezier(0.65, 0, 0.35, 1)
+    infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
