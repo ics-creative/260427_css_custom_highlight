@@ -22,14 +22,14 @@ const updateHighlight = () => {
   }
 
   const ranges = [];
-  const regex = new RegExp(keyword, "gi");
+  const regex = new RegExp(RegExp.escape(keyword), "gi");
   // テキストノードをループ
   for (const textNode of textNodes) {
     for (const match of textNode.textContent.matchAll(regex)) {
       // キーワードに一致する範囲を作成
       const range = new Range();
       range.setStart(textNode, match.index);
-      range.setEnd(textNode, match.index + keyword.length);
+      range.setEnd(textNode, match.index + match[0].length);
       ranges.push(range);
     }
   }
