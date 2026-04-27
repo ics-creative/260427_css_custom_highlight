@@ -17,7 +17,7 @@
     p {
       text-align: center;
     }
-    ::highlight(highlight) {
+    ::highlight(basic-highlight) {
       background: yellow;
     }
     </style>
@@ -32,8 +32,8 @@
     range.setStart(description.firstChild, 0);
     range.setEnd(description.firstChild, 24);
 
-    const highlight = new Highlight(range);
-    CSS.highlights.set("highlight", highlight);
+    const basicHighlight = new Highlight(range);
+    CSS.highlights.set("basic-highlight", basicHighlight);
     </script>
   </body>
 </html>
